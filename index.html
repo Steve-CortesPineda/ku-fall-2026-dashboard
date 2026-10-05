@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KU Fall 2026 – School Dashboard</title>
+<style>
+:root{--bg:#0e1116;--card:#171b22;--line:#262c36;--txt:#e6e9ef;--mut:#8b93a3;--acc:#5aa9ff;--ok:#3ecf8e;--warn:#ffb547;--bad:#ff6b6b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-size:22px;margin:4px 0 2px}
+.sub{color:var(--mut);font-size:13px;margin-bottom:16px}
+h2{font-size:16px;margin:0 0 10px;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.cd{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:14px}
+.cd div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.cd .big{font-size:30px;font-weight:700;color:var(--acc);font-variant-numeric:tabular-nums}
+.cd .main .big{color:var(--warn)}
+.cd small{color:var(--mut);display:block}
+label.todo{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+label.todo:last-child{border-bottom:0}
+label.todo input{margin-top:4px;width:18px;height:18px;accent-color:var(--ok);flex:none}
+label.todo input:checked+span{color:var(--mut);text-decoration:line-through}
+.day{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.day:last-child{border-bottom:0}
+.day b{color:var(--acc)}
+.day.today{background:#1d2633;border-radius:8px;padding:9px 8px}
+.day.past{opacity:.45}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;margin-right:4px;background:#243042;color:#9cc8ff}
+.tag.h{background:#3a2d16;color:var(--warn)}.tag.x{background:#3a1d1d;color:var(--bad)}.tag.o{background:#163326;color:var(--ok)}
+.mut{color:var(--mut);font-size:13px}
+.note{border-left:3px solid var(--warn);padding:6px 10px;background:#1f1a12;border-radius:6px;font-size:13px;margin-top:10px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.course h3{margin:0 0 6px;font-size:15px}
+.course p{margin:4px 0;font-size:13.5px}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+ul{margin:4px 0;padding-left:18px}li{margin:3px 0}
+.exam{color:var(--warn);font-weight:600}
+</style>
+</head>
+<body><div class="wrap">
+<h1>🎓 KU Fall 2026 – School Dashboard</h1>
+<div class="sub" id="now">Built Mon 5 Oct 2026, 22:30 KST · checkboxes save in this browser</div>
+
+<div class="cd">
+  <div class="main"><small>ECON335 midterm · Tue 20 Oct 16:30</small><span class="big" id="c1">–</span><small>closed book · 50%</small></div>
+  <div><small>BUSS254 midterm · Wed 21 Oct 10:30 (tentative)</small><span class="big" id="c2">–</span><small>1 A4 sheet · 30%</small></div>
+  <div><small>DISS337 midterm · Wed 21 Oct 12:00</small><span class="big" id="c3">–</span><small>Weeks 1–7 · 30%</small></div>
+  <div><small>DISS337 presentation · Mon 23 Nov</small><span class="big" id="c4">–</span><small>30% · 12–15 min</small></div>
+</div>
+
+<div class="card">
+<h2>🟢 TODAY – Mon 5 Oct (holiday, no class)</h2>
+<label class="todo"><input type="checkbox" data-k="t1"><span><b>ECON past exam #1, timed.</b> LMS → “Past Exams and Problem Sets” → the <b>oldest</b> past midterm, closed book, <b>80 min</b>, then 10 min quick-mark. Can't start by ~23:00? Do it Tue morning (never skip an ECON timed exam).</span></label>
+<label class="todo"><input type="checkbox" data-k="t2"><span><b>Prep for Tue ECON lecture (10 min).</b> MASTER → “Production economy”: Q2 = A2·F(I1), MPK = 1 + R1, plus the last slides of the Sep 29 doc. Tuesday = saving &amp; investment schedules, CA = S − I.</span></label>
+<label class="todo"><input type="checkbox" data-k="t3"><span><b>Get Tuesday ready (5 min).</b> Recorder/Granola ready for 16:30 ECON, error-log page started, exam #1 solutions downloaded.</span></label>
+</div>
+
+<div class="card">
+<h2>📅 THIS WEEK – 5–11 Oct</h2>
+<div class="day" data-d="2026-10-05"><b>Mon 5</b><div><span class="tag h">Holiday</span> No class · ECON past exam #1 (timed, 90 min)</div></div>
+<div class="day" data-d="2026-10-06"><b>Tue 6</b><div><span class="tag">ECON335 16:30</span> record it · before class: grade exam #1, redo misses, error log</div></div>
+<div class="day" data-d="2026-10-07"><b>Wed 7</b><div><span class="tag">BUSS254</span><span class="tag">DISS337 12:00 Rm 214</span><span class="tag o">ARC card pickup</span><br>record both · 60 min BUSS: MASTER BUSS Q1–Q4 + 2 past-midterm index questions</div></div>
+<div class="day" data-d="2026-10-08"><b>Thu 8</b><div>DISS Weeks 1–2 (triad, UDHR, 9 treaties, L.M.R., Mellet) · outline DISS Q1</div></div>
+<div class="day" data-d="2026-10-09"><b>Fri 9</b><div><span class="tag h">Hangul Day</span> ECON production: MPK = 1 + R1, MASTER Q8, 30 min Lab Drill</div></div>
+<div class="day" data-d="2026-10-10"><b>Sat 10</b><div><span class="tag x">Timed</span> ECON past exam #2 (90 min)</div></div>
+<div class="day" data-d="2026-10-11"><b>Sun 11</b><div>Grade exam #2 · DISS Weeks 2–3 (Pratt &amp; Morgan, Mortier, MCCL) · outline DISS Q2, Q6</div></div>
+<div class="note">✈️ Singapore F1 (9–11 Oct) would overlap Fri production, Sat exam #2 and Sun grading. If you go, move exam #2 to the first free day back.</div>
+<label class="todo"><input type="checkbox" data-k="w1"><span>Pick up ARC card (Wed 7)</span></label>
+<label class="todo"><input type="checkbox" data-k="w2"><span>Record ECON Tue 6 + BUSS/DISS Wed 7</span></label>
+<label class="todo"><input type="checkbox" data-k="w3"><span>LMS downloads: ECON past exams + solutions (F2024, S2025, F2025), BUSS254 past midterms, missing decks</span></label>
+<label class="todo"><input type="checkbox" data-k="w4"><span>Watch LMS for the BUSS254 midterm announcement (due ~Wed 14 Oct)</span></label>
+</div>
+
+<div class="card">
+<h2>🗓️ TO MIDTERMS – through Wed 21 Oct</h2>
+<div class="day" data-d="2026-10-12"><b>Mon 12</b><div>BUSS margin + short selling (Q5–Q7) · record DISS (INGOs vs local NGOs)</div></div>
+<div class="day" data-d="2026-10-13"><b>Tue 13</b><div><span class="tag o">Lab Check</span> all 4 ECON Lab modules + error log · <b>last ECON lecture</b> (Metzler), record it</div></div>
+<div class="day" data-d="2026-10-14"><b>Wed 14</b><div><span class="tag">🔔 BUSS details due</span> DISS Weeks 3–4 (Toonen, Gas &amp; Dubois, margin of appreciation)</div></div>
+<div class="day" data-d="2026-10-15"><b>Thu 15</b><div><span class="tag x">Timed</span> ECON past exam #3 (newest)</div></div>
+<div class="day" data-d="2026-10-16"><b>Fri 16</b><div>Grade exam #3 · ECON formula sheet from memory · Metzler diagram</div></div>
+<div class="day" data-d="2026-10-17"><b>Sat 17</b><div>BUSS: 2 past midterms + draft A4 sheet</div></div>
+<div class="day" data-d="2026-10-18"><b>Sun 18</b><div>DISS Weeks 5–7 + one-page case table</div></div>
+<div class="day" data-d="2026-10-19"><b>Mon 19</b><div>ECON final pass + redo the error log · review DISS UNHCR lecture</div></div>
+<div class="day" data-d="2026-10-20"><b>Tue 20</b><div class="exam">ECON335 MIDTERM 16:30–18:00 · closed book, no formula sheet</div></div>
+<div class="day" data-d="2026-10-21"><b>Wed 21</b><div class="exam">BUSS254 10:30–11:45 (tentative) → DISS337 12:00–13:15 Rm 214</div></div>
+<div class="day" data-d="2026-11-23"><b>Mon 23 Nov</b><div><span class="tag">Presentation</span> Refugee Protection &amp; Non-Refoulement · one NGO (deck: Danish Refugee Council) · ~5 people</div></div>
+<label class="todo"><input type="checkbox" data-k="p1"><span>Confirm Nov 23 slot (sheet says “Nov. 23 ?”)</span></label>
+<label class="todo"><input type="checkbox" data-k="p2"><span>Confirm team members + agree the NGO</span></label>
+</div>
+
+<div class="card">
+<h2>📚 Courses</h2>
+<div class="grid3">
+<div class="course"><h3>📈 ECON335 · Intl Finance (Yoo)</h3>
+<p><b>Next:</b> Tue 6 Oct 16:30, then Tue 13 (last before exam)</p>
+<p><b>Covered:</b> BoP/NIIP, sustainability, two-period model, shocks, ToT, r*, tariffs, intro production</p>
+<p><b>Gaps:</b> Sep 1 (no notes), Sep 8 &amp; 15 slides only</p>
+<p class="exam">Midterm Tue 20 Oct · 50% · keep R1 vs r* separate</p></div>
+<div class="course"><h3>💹 BUSS254 · Investments (Sohn)</h3>
+<p><b>Next:</b> Wed 7 Oct (margin calls)</p>
+<p><b>Covered:</b> Ch 1–2 (notes), indices &amp; index funds, order book, margin, shorts</p>
+<p><b>Gaps:</b> Intro/Ch0, Sep 21 &amp; 23</p>
+<p class="exam">Midterm Wed 21 Oct 10:30 (tentative) · 30% · 1 A4 sheet</p></div>
+<div class="course"><h3>🌍 DISS337 · NGOs (Choi)</h3>
+<p><b>Next:</b> Wed 7 Oct 12:00 Rm 214 (Birthright Lottery)</p>
+<p><b>Covered:</b> Weeks 1–5, UDHR → Jeong v Korea</p>
+<p><b>Gaps:</b> Sep 2, Sep 16, Sep 30 not recorded; Sep 21 poor audio</p>
+<p class="exam">Midterm Wed 21 Oct 12:00 · 30% · format TBA</p></div>
+</div></div>
+
+<div class="card">
+<h2>❓ Confirm on LMS / in class</h2>
+<ul>
+<li><b>BUSS254:</b> midterm date/time, room, chapter scope, calculator? (expected ~14 Oct)</li>
+<li><b>DISS337:</b> midterm format (short answer vs essay)</li>
+<li><b>DISS337:</b> Nov 23 slot + team</li>
+<li>All ECON past exams + solutions and missing decks downloaded</li>
+</ul>
+<div class="note">🎓 Scholarship (SCH-01): keep cumulative GPA at 2.82+ for 2026–27.</div>
+</div>
+
+<div class="card">
+<h2>🔗 Links</h2>
+<ul>
+<li><a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/b8a0bbd2-567c-508d-b94c-e31210fc39d4">Craft: School Dashboard</a></li>
+<li><a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/02b0ca5d-4a85-0c14-0046-454eaaf5d6f6">MASTER Midterm Study Note</a> · <a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/8bf19c33-0bb8-fab2-4de5-3e37f0ef0ae1">Study Plan</a> · <a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/3fad4c04-888b-bc67-d3f5-f41f3c458384">Start Here</a></li>
+<li>Latest sessions: <a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/cfcbf31b-4177-0ff5-f23e-153abe6b558d">ECON Sep 29</a> · <a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/50c5c732-7d13-3486-ad1f-e2aaabe49ddc">BUSS Sep 30</a> · <a href="https://docs.craft.do/editor/d/91e6ac38-7a67-d6ee-e47a-af19bf767db1/bceaa1f7-80ff-12dc-1d26-0af802d4cf9a">DISS Sep 30</a></li>
+<li><a href="../ECON335-Lab/index.html">ECON335 Lab (local)</a></li>
+<li><a href="DISS337/DISS337%20Project%20%E2%80%93%20Nov%2023%20%E2%80%93%20Refugee%20Protection%20%26%20Non-Refoulement%20(Research%20Brief).md">Nov 23 Research Brief (local .md)</a> · <a href="craftdocs://open?spaceId=91e6ac38-7a67-d6ee-e47a-af19bf767db1&amp;blockId=f129a4fb-07ab-bed8-8995-5f6a4b0057f4">in Craft</a> · <a href="https://docs.google.com/presentation/d/1JW2u61-duC0QU9RqqNQNnxsVJhE5TKxv/edit">Deck (Slides)</a></li>
+</ul></div>
+<div class="mut">Sources: Craft Study Plan, MASTER note, Start Here, Nov 23 brief. Nothing here is a new deadline.</div>
+</div>
+<script>
+const T=s=>new Date(s+"+09:00").getTime();
+const targets=[["c1","2026-10-20T16:30:00"],["c2","2026-10-21T10:30:00"],["c3","2026-10-21T12:00:00"],["c4","2026-11-23T00:00:00"]];
+function kstDate(){return new Date(Date.now()+9*3600e3).toISOString().slice(0,10)}
+function tick(){const n=Date.now();for(const[id,t] of targets){let d=T(t)-n,el=document.getElementById(id);if(d<=0){el.textContent="Done";continue}
+const D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4);el.textContent=D+"d "+H+"h "+String(M).padStart(2,"0")+"m"}}
+tick();setInterval(tick,30000);
+const today=kstDate();document.querySelectorAll(".day[data-d]").forEach(e=>{if(e.dataset.d===today)e.classList.add("today");else if(e.dataset.d<today)e.classList.add("past")});
+document.querySelectorAll("input[data-k]").forEach(c=>{const k="kuDash_"+c.dataset.k;try{c.checked=localStorage.getItem(k)==="1"}catch(e){}c.addEventListener("change",()=>{try{localStorage.setItem(k,c.checked?"1":"0")}catch(e){}})});
+</script>
+</body></html>
